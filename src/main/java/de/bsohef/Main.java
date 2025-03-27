@@ -17,7 +17,8 @@ public class Main {
 
         System.out.println("Bitte geben sie an, wie viel sie pro 100 Kilometer verbrauchen: ");
         double verbrauch = eingabe.nextDouble();
-        if(verbrauch < 0 );
+        if(verbrauch > 0 );
+        else
             System.out.println("Der eingegebene Verbrauch ist flasch");
 
         System.out.println("Bitte geben sie an, wie viel Kilometer sie fahren wollen: ");
@@ -32,13 +33,14 @@ public class Main {
         else
             System.out.println("Der eingegebene Preis ist flasch");
 
-
         double resttank = tankinhalt - (verbrauch / 100 * distanz);
+        double kostenfahrt = (tankinhalt - resttank) * preis;
 
         if(resttank < 0)
             System.out.println("Achtung der Tank wird für dir Strecke nicht reichen");
         else
             System.out.println("Der Resttank nach der Strecke beträgt " + resttank);
+        System.out.println("Die Benzinkosten für die Fahrt betragen " + kostenfahrt + " €");
 
     }
 }
